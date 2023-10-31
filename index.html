@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)file:///C:/Users/user/Desktop/%E5%82%B3%E8%BC%B8%E5%B7%A5%E5%85%B7/.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>&#39640;&#38596;&#22283;&#36008;&#24163;&#23565;&#26032;&#21488;&#24163;&#36681;&#25563;&#22120;</title>
+</head>
+<body>
+    <h1>&#39640;&#38596;&#22283;&#36008;&#24163;&#23565;&#26032;&#21488;&#24163;&#36681;&#25563;&#22120;</h1>
+    <form>
+        <label for="amount">&#20540;:</label>
+        <input type="number" id="amount">
+        <label for="fromCurrency">&#24478;</label>
+        <select id="fromCurrency">
+            <option value="NTD">&#26032;&#21488;&#24163;</option>
+            <option value="SU">&#34311;&#26408;</option>
+<option value="MI">&#26825;&#33457;</option>
+<option value="HU">&#29392;&#23614;&#27354;</option>
+<option value="SI">&#39321;&#33756;</option>
+<option value="MU">&#26408;&#29611;&#29808;</option>
+<option value="HO">&#32005;&#34367;&#34067;&#33845;&#33507;</option>
+<option value="XI">&#23567;&#40643;&#29916;</option>
+<option value="FO">&#39080;&#32645;&#34349;</option>
+<option value="MIN">&#36855;&#20320;&#23043;&#23043;&#33756;</option>
+<option value="TO">&#33596;&#33983;</option>
+<option value="LO">&#34367;&#34068;</option>
+            <!-- Add more currencies as needed -->
+        </select>
+        <label for="toCurrency">&#36681;&#25104;</label>
+        <select id="toCurrency">
+         
+            <option value="NTD">&#26032;&#21488;&#24163;</option>
+            <option value="SU">&#34311;&#26408;</option>
+<option value="MI">&#26825;&#33457;</option>
+<option value="HU">&#29392;&#23614;&#27354;</option>
+<option value="SI">&#39321;&#33756;</option>
+<option value="MU">&#26408;&#29611;&#29808;</option>
+<option value="HO">&#32005;&#34367;&#34067;&#33845;&#33507;</option>
+<option value="XI">&#23567;&#40643;&#29916;</option>
+<option value="FO">&#39080;&#32645;&#34349;</option>
+<option value="MIN">&#36855;&#20320;&#23043;&#23043;&#33756;</option>
+<option value="TO">&#33596;&#33983;</option>
+<option value="LO">&#34367;&#34068;</option>
+            <!-- Add more currencies as needed -->
+        </select>
+        <button type="button" onclick="convertCurrency()">&#36681;&#25563;(´&#65381;&#969;&#65381;`)</button>
+    </form>
+    <p id="result">Result: NaN NTD</p>
+    
+    <script>
+        function convertCurrency() {
+            const amount = parseFloat(document.getElementById("amount").value);
+            const fromCurrency = document.getElementById("fromCurrency").value;
+            const toCurrency = document.getElementById("toCurrency").value;
+            
+            // Customize exchange rates here
+            const exchangeRates = {
+                NTD: 1,  // 1 USD to USD (base currency)
+                SU: 8,  // Example rate for EUR to USD
+                MI: 2.5,  // Example rate for EUR to USD
+                HU: 5,  // Example rate for EUR to USD
+                SI: 0.024,  // Example rate for EUR to USD
+                MU: 5,  // Example rate for EUR to USD
+                HO: 0.01,  // Example rate for EUR to USD
+                XI: 1.625,  // Example rate for EUR to USD
+                FO: 1,  // Example rate for EUR to USD
+                MIN: 0.289,  // Example rate for EUR to USD
+                TO: 0.0026,  // Example rate for EUR to USD
+                LO: 0.3,  // Example rate for EUR to USD
+                // Add more currencies with their fixed rates
+            };
+            
+            const exchangeRate = exchangeRates[fromCurrency] / exchangeRates[toCurrency];
+            const result = amount * exchangeRate;
+            document.getElementById("result").innerText = `Result: ${result.toFixed(2)} ${toCurrency}`;
+        }
+    </script>
+
+</body></html>
